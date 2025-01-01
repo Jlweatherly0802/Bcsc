@@ -29,4 +29,4 @@ python bcsc MyProgram Path/to/your/project
 Please feel welcome to open any issues or contribute to this project by submitting pull requests.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
