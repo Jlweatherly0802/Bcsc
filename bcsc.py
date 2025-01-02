@@ -3,8 +3,6 @@ import os
 from pathlib import Path
 import sys
 
-
-
 def FindCsFiles(dir):
     csFiles = []
     files = os.listdir(dir)
@@ -12,14 +10,9 @@ def FindCsFiles(dir):
         path = os.path.join(dir, file)
         if file.endswith(".cs"):
             csFiles.append(path)
-
         if os.path.isdir(path):
             csFiles.extend(FindCsFiles(path))
-
-
     return csFiles
-
-
 
 def Main():
     if len(sys.argv) < 3:
@@ -40,12 +33,10 @@ def Main():
     if not os.path.exists(os.path.join(MAIN_DIR, "build")):
         os.mkdir(os.path.join(MAIN_DIR, "build"))
 
-
     cscCommand = ["csc", f"/out:{MAIN_DIR}\\build\\{NAME}.exe"] + CS_FILES
 
     processResult = subprocess.run(cscCommand, capture_output=True, text=True)
     print(processResult.stdout)
     print(processResult.stderr)
-
 
 Main()
